@@ -1,0 +1,411 @@
+/*
+========================
+       SHARED CSS
+========================
+*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  background-color: #fffdfa;
+  position: relative;
+  z-index: -2;
+  overflow: scroll;
+}
+/*
+========================
+       OUTER GRID
+========================
+*/
+#outer-grid {
+  display: grid;
+  grid-template: 120px repeat(3, auto) minmax(100px, auto) / 1fr;
+  margin: 0 30px;
+}
+
+header {
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+main {
+  grid-row: 2/3;
+  grid-column: 1/2;
+}
+article {
+  grid-row: 3/4;
+  grid-column: 1/2;
+}
+#top-3 {
+  grid-row: 4/5;
+  grid-column: 1/2;
+}
+/*
+========================
+       MOBILE NAV
+========================
+*/
+#mobile-nav-open {
+  position: fixed;
+  height: 100vh;
+  width: 70vw;
+  right: 0;
+  z-index: 5;
+  background-color: #fffdfa;
+  display: none;
+}
+#mobile-nav-open img {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 50px;
+}
+#mobile-a-tags {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin-top: 15vh;
+  height: 100%;
+}
+#mobile-nav-open #mobile-a-tags a {
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: #5d5f79;
+  margin: 20px 30px;
+}
+#black-fog {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  right: 0;
+  z-index: 2;
+  background-color: #00001a;
+  opacity: 0.5;
+  display: none;
+}
+/*
+========================
+       HEADER
+========================
+*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#mobile-nav {
+  height: 30px;
+}
+#desktop-nav {
+  display: none;
+}
+/*
+========================
+       MAIN
+========================
+*/
+main {
+  margin-bottom: 40px;
+}
+#main-hero {
+  height: 80vw;
+  background-image: url(./assets/images/image-web-3-mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+main h1 {
+  font-weight: 800;
+  font-size: 2.8rem;
+  margin-top: 20px;
+  color: #00001a;
+}
+main p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #5d5f79;
+}
+main button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background-color: #f15e50;
+  color: #fffdfa;
+  border: none;
+}
+main button:hover {
+  background-color: #00001a;
+  cursor: pointer;
+}
+/*
+========================
+       ARTICLE
+========================
+*/
+article {
+  background-color: #00001a;
+  color: #fffdfa;
+  padding: 20px;
+  font-size: 1.15rem;
+  margin: 40px 0;
+}
+article h2 {
+  color: #e9ab53;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+article h3 {
+  margin-bottom: 10px;
+}
+h3:hover {
+  color: #e9ab53;
+  cursor: pointer;
+}
+
+article hr {
+  margin: 30px 0;
+}
+article p {
+  color: #c5c6ce;
+}
+/*
+========================
+       TOP 3
+========================
+*/
+#top-3 {
+  margin-top: 40px;
+}
+/*
+========================
+      SUB TOP
+========================
+*/
+.sub-top {
+  display: flex;
+  width: 100%;
+  margin: 20px 0;
+  font-size: 1.1rem;
+}
+.sub-top img {
+  width: 100px;
+}
+.sub-top-text {
+  margin-left: 20px;
+  align-self: center;
+}
+.sub-top-text h2 {
+  margin-bottom: 10px;
+  color: #c5c6ce;
+}
+.sub-top-text h3:hover {
+  color: #f15e50;
+  cursor: pointer;
+}
+.sub-top-text h3 {
+  margin-bottom: 10px;
+  color: #00001a;
+}
+.sub-top-text p {
+  color: #5d5f79;
+}
+/*
+========================
+       BREAKPOINTS
+========================
+*/
+
+@media (min-width: 1250px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  /*
+========================
+       OUTER GRID
+========================
+*/
+  #outer-grid {
+    grid-template: 10vh 60vh 20vh / 2fr 1fr;
+    width: 75vw;
+    height: 90vh;
+  }
+
+  header {
+    grid-row: 1/2;
+    grid-column: 1/3;
+  }
+  main {
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+  article {
+    grid-row: 2/3;
+    grid-column: 2/3;
+  }
+  #top-3 {
+    grid-row: 3/4;
+    grid-column: 1/3;
+  }
+  /*
+========================
+    INNER MAIN GRID
+========================
+*/
+  #inner-main-desktop-grid {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+
+    height: 100%;
+  }
+  #inner-main-desktop-grid #main-hero {
+    grid-row: 1/2;
+    grid-column: 1/3;
+    background-image: url(./assets/images/image-web-3-desktop.jpg);
+    height: 250px;
+  }
+  #inner-main-desktop-grid h1 {
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+  #right-main-grid {
+    grid-row: 2/3;
+    grid-column: 2/3;
+  }
+  /*
+========================
+    INNER TOP 3 GRID
+========================
+*/
+  #inner-top-3-desktop-grid {
+    display: grid;
+    grid-template: 1fr / repeat(3, 1fr);
+  }
+  .sub-top-1 {
+    grid-row: 1/2;
+    grid-column: 1/2;
+  }
+  .sub-top-2 {
+    grid-row: 1/2;
+    grid-column: 2/3;
+  }
+  .sub-top-3 {
+    grid-row: 1/2;
+    grid-column: 3/4;
+  }
+  /*
+========================
+MARGIN RESET FOR DESKTOP
+========================
+*/
+  main,
+  main h1,
+  main button,
+  #outer-grid,
+  #right-main-grid p,
+  article,
+  #top-3,
+  .sub-top {
+    margin: 0;
+  }
+  /*
+========================
+        HEADER
+========================
+*/
+  header {
+    margin-bottom: 40px;
+  }
+  #mobile-nav {
+    display: none;
+  }
+  #desktop-nav {
+    display: block;
+  }
+  #desktop-nav a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    margin-left: 50px;
+    color: #5d5f79;
+  }
+  #desktop-nav a:hover {
+    color: #e9ab53;
+    cursor: pointer;
+  }
+  /*
+========================
+        MAIN
+========================
+*/
+
+  main h1 {
+    font-size: 3rem;
+  }
+  #right-main-grid {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #right-main-grid p {
+    font-size: 1.05rem;
+  }
+  #right-main-grid button {
+    width: 200px;
+  }
+  /*
+========================
+         ARTICLE
+========================
+*/
+  article {
+    padding: 35px;
+  }
+  article h2 {
+    font-size: 1.6rem;
+  }
+
+  article h3 {
+    font-size: 1.05rem;
+  }
+  article p {
+    font-size: 1.05rem;
+  }
+  article hr {
+    margin: 20px 0;
+  }
+  /*
+
+  /*
+========================
+      MARGIN FINISH
+========================
+*/
+  main {
+    margin-right: 40px;
+  }
+  main h1,
+  #right-main-grid {
+    margin-top: 40px;
+  }
+  #right-main-grid {
+    margin-left: 20px;
+  }
+  #top-3 {
+    margin-top: 40px;
+  }
+  .sub-top {
+    font-size: 1.05rem;
+  }
+}
+@media (min-width: 1600px) {
+  main h1 {
+    font-size: 4.5rem;
+  }
+}
